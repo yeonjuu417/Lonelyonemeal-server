@@ -17,6 +17,6 @@
  # 기술소개
   <img src="https://i.imgur.com/FbfxZWs.png" alt="tech" border="0"></a><br /><a target='_blank' href='https://i.imgur.com/FbfxZWs.png'>
  # 프로젝트 링크 
-  [고독한한끼] (https://onemeal.xyz)
+  [고독한한끼](https://onemeal.xyz)
  # 자세한 설명 
   [WIKI](https://github.com/codestates/Lonelyonemeal-server/wiki)
