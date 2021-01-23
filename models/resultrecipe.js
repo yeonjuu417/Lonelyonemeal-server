@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.NUMBER,
       primaryKey: true,
     },
-    foodImg: DataTypes.BLOB('LONG'),
+    foodImg: DataTypes.STRING,
     foodName: DataTypes.STRING,
     link: DataTypes.STRING
   }, {

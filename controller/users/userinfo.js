@@ -1,17 +1,31 @@
-const { user,recipelog } = require('../../models');
+const { users, recipeLogs } = require('../../models');
 
 module.exports = {
-    get:async (req, res) => {
-        if(req.session.userId){
-            let userInfo = await user.findeOne({
-                where : {id : req.session.userId}
+    get: async (req, res) => {
+        if (req.session.userId) {
+            let userInfo = await users.findOne({
+                where: {
+                    id: req.session.userId
+                }
             })
-            let recipeLog = await recipelog.findeAll({
-                where : {userId : req.session.userId}
-            }) 
-            res.status(200).json({data: userInfo, Log : recipeLog})
-        }else{
-            res.status(401).send({message : 'Unauthorized'})
+            let recipelog = await recipeLogs.findAll({
+                where: {
+                    userId: req.session.userId
+                }
+            })
+            res.status(200).json({
+                data: {
+                    id: userInfo.id,
+                    userImg: userInfo.userImg,
+                    email: userInfo.email,
+                    username: userInfo.username
+                },
+                log: recipelog
+            })
+        } else {
+            res.status(401).send({
+                message: 'Unauthorized'
+            })
         }
     }
 }

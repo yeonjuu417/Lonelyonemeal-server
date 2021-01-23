@@ -10,11 +10,11 @@ module.exports = {
   },
   "test": {
     "username": "root",
-    "password": process.env.DATABASE_LOCALPASSWORD || null,
-    "database": process.env.DATABASE_TESTDB || null,
+    "password": process.env.DATABASE_LOCALPASSWORD,
+    "database": process.env.DATABASE_TESTDB,
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "port": process.env.DATABASE_PORT || '3306'
+    "port": '3306'
   },
   "production": {
     "username": "root",

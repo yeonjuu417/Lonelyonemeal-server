@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.hasMany(models.recipelog);
+      this.hasMany(models.recipeLogs);
     }
   };
   user.init(
@@ -20,10 +20,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.NUMBER,
       primaryKey: true,
     },
-    userImg: DataTypes.BLOB('LONG'),
+    userImg: DataTypes.STRING,
     email: DataTypes.STRING,
     username: DataTypes.STRING,
     password: DataTypes.STRING,
+    salt: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'users',

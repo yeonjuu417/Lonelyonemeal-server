@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      this.belongsTo(models.user)
+      this.belongsTo(models.users)
     }
   };
   recipeLog.init({
@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
     },
     userId: DataTypes.INTEGER,
-    foodImg: DataTypes.BLOB('LONG'),
+    foodImg: DataTypes.STRING,
     foodName: DataTypes.STRING,
     link : DataTypes.STRING,
   }, {
